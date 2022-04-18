@@ -42,7 +42,7 @@ function Gallery({ photos }) {
 
   return (
     <div className="gallery-container">
-        <Header />
+        <Header title="PhotoGallery" />
         <ButtonsCat selectHandler={selectHandler} />
         { loading ? <Spinner color="primary">Loading...</Spinner> : <GalCat photos={photoCat} />}
     </div>

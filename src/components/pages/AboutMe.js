@@ -1,12 +1,21 @@
 import React from 'react'
-import PropTypes from 'prop-types'
+import Header from '../UI/Header'
 
-function AboutMe(props) {
+function AboutMe() {
   return (
-    <div>AboutMe</div>
+    <div className="">
+      <Header title="About me"/>
+      <main className="aboutMe-main">
+        <h2>Обо мне</h2>
+        <p>
+          Мне 26 лет, живу в городе Казани.
+          Програмированием заниаюсь около года, до этого работал в сфере киберспорта.
+          Являлся игроком в дисциплине Dota 2, занимался этим профессионально 3-4 года.<br/> Играл во многих командах и участвовал в международных соревнованиях.
+          В определённый момент потерял мотивацию и решил заняться другим делом. В данный момент изучаю библиотеку Реакт и сопутствующие технологии.<br />
+          </p>
+      </main>
+    </div>
   )
 }
-
-AboutMe.propTypes = {}
 
 export default AboutMe

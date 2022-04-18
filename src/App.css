@@ -2,6 +2,10 @@
   text-align: center;
 }
 
+body a {
+  text-decoration: none;
+}
+
 .photos-container {
   display: flex;
   flex-wrap: wrap;
@@ -37,4 +41,16 @@
   left: 38%;
   bottom: 46%;
   z-index: -1;
+}
+
+.avatar {
+  border-radius: 100px;
+}
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+  float: right;
+  text-align: center;
+  font-size: 12px;
 }
