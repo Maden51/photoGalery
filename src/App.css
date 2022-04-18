@@ -53,3 +53,10 @@ body a {
   text-align: center;
   font-size: 12px;
 }
+
+.imageInfo-container {
+  width: 600px;
+  box-sizing: border-box;
+  height: auto;
+  margin: 0 auto;
+}

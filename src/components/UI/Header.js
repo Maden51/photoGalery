@@ -47,7 +47,7 @@ function Header(props) {
                 </div>
                     <Nav vertical>
                         <NavItem>
-                            <Link to="*">
+                            <Link to="/">
                                 Галерея
                             </Link>
                         </NavItem>

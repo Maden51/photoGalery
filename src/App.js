@@ -26,7 +26,7 @@ function App() {
         <Routes>
           <Route exact path="*" element={<Gallery photos={photos} />} />
           <Route path="/aboutMe" element={<AboutMe />} />
-          <Route path="/imageInfo" element={<ImageInfo />} />
+          <Route path="/imageInfo/:imageId" element={<ImageInfo />} />
         </Routes>
       </div>
     </BrowserRouter>
