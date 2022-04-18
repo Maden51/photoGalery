@@ -13,7 +13,7 @@ function App() {
   const [photos, setPhotos] = useState([]);
 
   useEffect(() => {
-    axios.get('https://jsonplaceholder.typicode.com/photos?_start=0&_end=24')
+      axios.get('https://jsonplaceholder.typicode.com/photos?_start=0&_end=24')
       .then(res => {
         setPhotos(res.data)
       })

@@ -5,8 +5,36 @@
 .photos-container {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-around;
 }
 
 .photo-card {
   width: 30%;
+  position: relative;
+  z-index: -2;
+}
+
+.btn-box {
+  margin-bottom: 15px;
+}
+
+.photo-img {
+  width: 100%;
+  z-index: -2;
+}
+
+.photo-card:nth-child(n+4) {
+  margin-top: 3%;
+}
+
+.photo-card:nth-child(3n+2) {
+  margin-left: 3%;
+  margin-right: 3%;
+}
+
+.info-btn {
+  position: absolute;
+  left: 38%;
+  bottom: 46%;
+  z-index: -1;
 }
