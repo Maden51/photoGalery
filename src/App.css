@@ -15,7 +15,6 @@ body a {
 .photo-card {
   width: 30%;
   position: relative;
-  z-index: -2;
 }
 
 .btn-box {
@@ -24,7 +23,7 @@ body a {
 
 .photo-img {
   width: 100%;
-  z-index: -2;
+  height: auto;
 }
 
 .photo-card:nth-child(n+4) {
@@ -40,7 +39,7 @@ body a {
   position: absolute;
   left: 38%;
   bottom: 46%;
-  z-index: -1;
+  opacity: 1;
 }
 
 .avatar {

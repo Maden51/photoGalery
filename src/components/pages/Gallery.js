@@ -36,10 +36,6 @@ function Gallery({ photos }) {
         setSelectedCat(Number(value));
     }
 
-    const hoverHandler = (e) => {
-
-    }
-
   return (
     <div className="gallery-container">
         <Header title="PhotoGallery" />
