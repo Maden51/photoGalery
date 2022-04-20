@@ -1,37 +1,29 @@
 import React, { useEffect, useState } from 'react'
-import axios from 'axios';
-import { useNavigate, useParams } from 'react-router';
+import { useParams } from 'react-router';
 import ImgCard from '../UI/ImgCard';
 import { Spinner } from 'reactstrap'
+import { useDispatch, useSelector } from 'react-redux';
+import { getPhotos, selectPhotoById } from '../../redux/photoSlice';
 
 function ImageInfo() {
+  const dispatch = useDispatch();
   const [loading, setLoading] = useState(false);
-  const [img, setImg] = useState({});
   const { photoId } = useParams();
-  const navigate = useNavigate();
+  const photo = useSelector((state) => selectPhotoById(state, Number(photoId)))
 
   useEffect(() => {
     setLoading(true);
-    setInterval(() => {
-      axios.get(`https://jsonplaceholder.typicode.com/photos/${photoId}`)
-      .then(res => {
-        setImg(res.data)
-        setLoading(false)
-      })
-      .catch((err) => console.log(err))
+    setTimeout(() => {
+      dispatch(getPhotos())
+      setLoading(false)
     }, 500)
-  }, [photoId])
-
-  const handleClick = (e) => {
-    e.preventDefault();
-    navigate('/')
-  }
+  }, [dispatch]);
 
   return (
     <div className="imageInfo-container">
       {loading ?
         <Spinner color="primary" className="loader-spinner">Loading...</Spinner> : 
-        <ImgCard img={img} handleClick={handleClick} />
+        <ImgCard img={photo} />
       }
     </div>
   )
