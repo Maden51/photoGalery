@@ -13,7 +13,7 @@ function PhotoCard({ item }) {
 
     const handleClick = (e) => {
         e.preventDefault();
-        navigate(`/imageInfo/${item.id}`);
+        navigate(`/photos/${item.id}`);
     }
 
   return (
@@ -22,7 +22,7 @@ function PhotoCard({ item }) {
             ?
             <>
                 <Button className="info-btn" onClick={handleClick}>Подробнее</Button>
-                <img src={item.url} alt={item.title} className="photo-img"></img>
+                <img src={item.url} alt={item.title} className="photo-img hovered"></img>
             </> 
             : 
                 <img src={item.url} alt={item.title} className="photo-img"></img>

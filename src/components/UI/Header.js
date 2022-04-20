@@ -38,7 +38,6 @@ function Header(props) {
                 <OffcanvasHeader toggle={handleClose}>
                     Menu
                 </OffcanvasHeader>
-                
                 <OffcanvasBody>
                 <div className="user-info">
                     <img src="https://i.pravatar.cc/100" alt="аватар" className="avatar" />

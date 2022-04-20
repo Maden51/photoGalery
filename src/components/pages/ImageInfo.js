@@ -6,21 +6,21 @@ import { Spinner } from 'reactstrap'
 
 function ImageInfo() {
   const [loading, setLoading] = useState(false);
-  const [img, setImg] = useState([]);
-  const { imageId } = useParams();
+  const [img, setImg] = useState({});
+  const { photoId } = useParams();
   const navigate = useNavigate();
 
   useEffect(() => {
     setLoading(true);
     setInterval(() => {
-      axios.get(`https://jsonplaceholder.typicode.com/photos/${imageId}`)
+      axios.get(`https://jsonplaceholder.typicode.com/photos/${photoId}`)
       .then(res => {
         setImg(res.data)
         setLoading(false)
       })
       .catch((err) => console.log(err))
     }, 500)
-  }, [imageId])
+  }, [photoId])
 
   const handleClick = (e) => {
     e.preventDefault();
@@ -30,7 +30,7 @@ function ImageInfo() {
   return (
     <div className="imageInfo-container">
       {loading ?
-        <Spinner color="primary">Loading...</Spinner> : 
+        <Spinner color="primary" className="loader-spinner">Loading...</Spinner> : 
         <ImgCard img={img} handleClick={handleClick} />
       }
     </div>
