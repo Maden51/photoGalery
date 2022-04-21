@@ -16,10 +16,29 @@ const photoSlice = createSlice({
     name: 'photos',
     initialState,
     reducers : {
-        getPhotos() {},
+        getPhotos(state, action) {
+            if (state.status === 'idle') {
+                state.status = 'pending'
+            }
+        },
         setPhotos(state, action) {
-            const photoData = action.payload;
-            return { ...state, photos: [...photoData] };
+            if (state.status === 'pending') {
+                state.status = 'idle';
+                const photosData = action.payload;
+                state.photos = [...photosData];
+            }
+        },
+        getPhotoById(state, action) {
+            if (state.status === 'idle') {
+                state.status = 'pending';
+            }
+        },
+        setPhotoById(state, action) {
+            if (state.status === 'pending') {
+                state.status = 'idle';
+                const photoData = action.payload;
+                state.photos = {...photoData};
+            }
         }
     },
     // extraReducers(builder) {
@@ -38,10 +57,10 @@ const photoSlice = createSlice({
     // }
 });
 
-export const {setPhotos, getPhotos} = photoSlice.actions
+export const {setPhotos, getPhotos, getPhotoById, setPhotoById} = photoSlice.actions;
 
-export default photoSlice.reducer
+export default photoSlice.reducer;
 
-export const selectAllPhotos = (state) => state.photos.photos
+export const selectAllPhotos = (state) => state.photos.photos;
 
-export const selectPhotoById = (state, photoId) => state.photos.photos.find((photo) => photo.id === photoId)
+export const selectPhotoById = (state) => state.photos.photos;

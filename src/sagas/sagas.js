@@ -1,7 +1,9 @@
-import { takeLatest } from 'redux-saga/effects'
-import { getPhotos } from '../redux/photoSlice'
-import { handleGetPhotos } from './handlers/photos';
+import { all } from 'redux-saga/effects'
+import { watcherGetPhotoById, watcherGetPhotos } from './watchers/photos';
 
 export default function* rootSaga() {
-    yield takeLatest(getPhotos.type, handleGetPhotos);
+    yield all([
+        watcherGetPhotos(),
+        watcherGetPhotoById()
+    ])
 }

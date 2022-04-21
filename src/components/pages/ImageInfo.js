@@ -3,7 +3,7 @@ import { useParams } from 'react-router';
 import ImgCard from '../UI/ImgCard';
 import { Spinner } from 'reactstrap'
 import { useDispatch, useSelector } from 'react-redux';
-import { getPhotos, selectPhotoById } from '../../redux/photoSlice';
+import { getPhotoById, selectPhotoById } from '../../redux/photoSlice';
 
 function ImageInfo() {
   const dispatch = useDispatch();
@@ -14,10 +14,10 @@ function ImageInfo() {
   useEffect(() => {
     setLoading(true);
     setTimeout(() => {
-      dispatch(getPhotos())
+      dispatch(getPhotoById(photoId))
       setLoading(false)
     }, 500)
-  }, [dispatch]);
+  }, [dispatch, photoId]);
 
   return (
     <div className="imageInfo-container">
