@@ -13,7 +13,7 @@ function PhotoCard({ item }) {
 
     const handleClick = (e) => {
         e.preventDefault();
-        navigate(`/photos/${item.id}`);
+        navigate(`/${item.id}`);
     }
 
   return (
