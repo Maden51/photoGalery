@@ -12,9 +12,9 @@ function App() {
     <BrowserRouter>
       <div className="App-container">
         <Routes>
-          <Route exact path="*" element={<Gallery />} />
-          <Route path="/aboutMe" element={<AboutMe />} />
-          <Route path="/:photoId" element={<ImageInfo />} />
+          <Route exact path="/photoGalery" element={<Gallery />} />
+          <Route path="/photoGalery/aboutMe" element={<AboutMe />} />
+          <Route path="/photoGalery/:photoId" element={<ImageInfo />} />
         </Routes>
       </div>
     </BrowserRouter>

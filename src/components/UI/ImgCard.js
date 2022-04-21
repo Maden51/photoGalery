@@ -7,7 +7,7 @@ function ImgCard({ img }) {
   const navigate = useNavigate();
   const handleClick = (e) => {
     e.preventDefault();
-    navigate('/')
+    navigate('/photoGalery')
   }
 
   if(!img) {

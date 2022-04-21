@@ -46,12 +46,12 @@ function Header(props) {
                 </div>
                     <Nav vertical>
                         <NavItem>
-                            <Link to="/">
+                            <Link to="/photoGalery">
                                 Галерея
                             </Link>
                         </NavItem>
                         <NavItem>
-                            <Link to="/aboutMe">
+                            <Link to="/photoGalery/aboutMe">
                                 Обо мне
                             </Link>
                         </NavItem>
