@@ -9,7 +9,7 @@ function ImageInfo() {
   const dispatch = useDispatch();
   const [loading, setLoading] = useState(false);
   const { photoId } = useParams();
-  const photo = useSelector((state) => selectPhotoById(state, Number(photoId)))
+  const photo = useSelector((state) => selectPhotoById(state))
 
   useEffect(() => {
     setLoading(true);
